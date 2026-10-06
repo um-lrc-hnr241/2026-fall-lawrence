@@ -78,6 +78,40 @@ video {
   height: auto;
 }
 
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.team-card {
+  min-width: 0;
+  text-align: center;
+}
+
+.team-photo,
+.team-photo-placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #e8e2d7;
+}
+
+.team-photo-placeholder {
+  display: grid;
+  place-items: center;
+  padding: 0.75rem;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+@media (max-width: 40rem) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   color: var(--muted);
