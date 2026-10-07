@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap');
+
 :root {
-  --text: #1f2933;
-  --muted: #52606d;
-  --background: #fdfcf9;
-  --accent: #1d5fa8;
-  --border: #d9d4c7;
+  --text: #29231f;
+  --muted: #51483f;
+  --background: #eee7d9;
+  --accent: #7b2f1d;
+  --border: #6b6257;
   --max-width: 46rem;
 }
 
@@ -19,7 +21,7 @@ body {
   font-size: 1.125rem;
   line-height: 1.6;
   color: var(--text);
-  background: var(--background);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.26), transparent 55%), var(--background);
 }
 
 .site-header,
@@ -36,7 +38,9 @@ main,
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  border-bottom: 1px solid var(--border);
+  color: #f4eddf;
+  background: repeating-linear-gradient(90deg, #292d2f 0 2.4rem, #34393b 2.4rem 2.6rem);
+  border-bottom: 4px solid #7b2f1d;
 }
 
 .site-title {
@@ -46,6 +50,8 @@ main,
 
 .site-title a {
   color: inherit;
+  font-family: "Stardos Stencil", Georgia, serif;
+  font-size: 1.35em;
   text-decoration: none;
 }
 
@@ -58,6 +64,14 @@ nav ul {
   list-style: none;
 }
 
+nav a {
+  color: #f4eddf;
+}
+
+nav a:focus-visible {
+  outline-color: #f1c27d;
+}
+
 a {
   color: var(--accent);
 }
@@ -68,17 +82,27 @@ a:focus-visible {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-family: "Stardos Stencil", Georgia, serif;
+  font-size: 2.5rem;
   line-height: 1.2;
+  color: #552719;
+}
+
+h2,
+h3 {
+  font-family: "Stardos Stencil", Georgia, serif;
 }
 
 img,
 video {
   max-width: 100%;
   height: auto;
+  border: 3px solid #6b6257;
+  box-shadow: 4px 4px 0 #c2b6a4;
 }
 
 body::after {
+  display: none;
   content: "";
   position: fixed;
   z-index: 20;
@@ -103,7 +127,11 @@ body::after {
 
 .team-card {
   min-width: 0;
+  padding: 0.75rem;
   text-align: center;
+  background: #f7f1e6;
+  border: 1px solid var(--border);
+  box-shadow: 3px 3px 0 #c2b6a4;
 }
 
 .team-photo,
@@ -121,6 +149,7 @@ body::after {
   padding: 0.75rem;
   color: var(--text);
   font-size: 1rem;
+  border: 3px solid #6b6257;
 }
 
 @media (max-width: 40rem) {
