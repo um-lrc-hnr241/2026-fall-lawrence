@@ -78,6 +78,23 @@ video {
   height: auto;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 20;
+  left: 0;
+  bottom: 1.5rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  border: 0.2rem solid #70451f;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #8b5a2b 0 18%, transparent 20%),
+    repeating-conic-gradient(#70451f 0deg 3deg, transparent 3deg 18deg);
+  pointer-events: none;
+  animation: tumbleweed-roll 4.5s ease-in-out both;
+}
+
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -128,4 +145,21 @@ video {
   top: 1rem;
   padding: 0.5rem 0.75rem;
   background: var(--background);
+}
+
+@keyframes tumbleweed-roll {
+  from {
+    transform: translateX(-6rem) rotate(0deg);
+  }
+
+  to {
+    transform: translateX(calc(100vw + 7rem)) rotate(1080deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    display: none;
+    animation: none;
+  }
 }
