@@ -101,8 +101,8 @@ video {
   box-shadow: 4px 4px 0 #c2b6a4;
 }
 
-body::after {
-  display: none;
+body.home-page::after {
+  display: block;
   content: "";
   position: fixed;
   z-index: 20;
@@ -112,11 +112,9 @@ body::after {
   height: 3.75rem;
   border: 0.2rem solid #70451f;
   border-radius: 50%;
-  background:
-    radial-gradient(circle, #8b5a2b 0 18%, transparent 20%),
-    repeating-conic-gradient(#70451f 0deg 3deg, transparent 3deg 18deg);
+  background: url("images/Tumbleweed") center / contain no-repeat;
   pointer-events: none;
-  animation: tumbleweed-roll 4.5s ease-in-out both;
+  animation: tumbleweed-roll 8s linear infinite;
 }
 
 .team-grid {
@@ -187,8 +185,9 @@ body::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body::after {
-    display: none;
+  body.home-page::after {
     animation: none;
+    transform: none;
+    left: 1rem;
   }
 }
