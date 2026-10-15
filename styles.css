@@ -24,6 +24,10 @@ body {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.26), transparent 55%), var(--background);
 }
 
+body.home-page {
+  background: url("images/Canyon") center / cover fixed no-repeat;
+}
+
 .site-header,
 main,
 .site-footer {
