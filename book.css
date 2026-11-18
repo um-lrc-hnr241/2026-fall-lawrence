@@ -229,6 +229,10 @@
   margin-left: auto;
 }
 
+::view-transition {
+  pointer-events: none;
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root),
 ::view-transition-group(lawrence-book-page) {
