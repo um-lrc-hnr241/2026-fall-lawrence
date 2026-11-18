@@ -1,0 +1,301 @@
+.home-page {
+  min-height: 100svh;
+  background: linear-gradient(#211910c9, #211910df), url("images/Canyon") center / cover fixed;
+}
+
+.book-header {
+  max-width: 65rem;
+  padding-block: 1rem;
+  border: 0;
+  background: #211910;
+}
+
+.book-header nav ul {
+  gap: 0.4rem 1.1rem;
+}
+
+.book-header [aria-current="page"] {
+  color: #ffd99a;
+  text-underline-offset: 0.28em;
+}
+
+.book-main {
+  max-width: 53rem;
+  padding: clamp(1rem, 4vw, 3rem) clamp(0.9rem, 4vw, 3rem) 2rem;
+}
+
+.book-footer {
+  width: calc(100% - 2rem);
+  color: #e9ceab;
+  border-color: #c5996c70;
+  text-align: center;
+  font-size: 0.8rem;
+  padding-block: 0.6rem;
+}
+
+.book-main [hidden] {
+  display: none;
+}
+
+.book-stage {
+  view-transition-name: lawrence-book-page;
+  position: relative;
+  background: #f6ead1;
+  border-radius: 0.18rem 0.6rem 0.6rem 0.18rem;
+  box-shadow: 3px 3px #d6be97, 6px 6px #8e6141, 8px 8px #483320, 0 15px 40px #150a06a6;
+}
+
+.book-stage:focus-visible {
+  outline: 2px solid #ffc977;
+  outline-offset: 5px;
+}
+
+.book-cover {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid #ad7851;
+  border-radius: inherit;
+  color: #ffe9b9;
+  background:
+    linear-gradient(90deg, #2f1509 0, #623215 0.45rem, #3c1b0d 1.25rem, transparent 1.6rem),
+    repeating-linear-gradient(105deg, #ffffff06 0 1px, transparent 1px 4px),
+    radial-gradient(ellipse at 55% 38%, #79401e, #461e0d 75%);
+}
+
+.cover-link {
+  position: relative;
+  display: block;
+  padding: clamp(2.1rem, 5vw, 4rem) clamp(1.7rem, 6vw, 4.7rem) 2.15rem;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.cover-link::before {
+  content: "";
+  position: absolute;
+  inset: 0.65rem 0.65rem 0.65rem 1.15rem;
+  border: 1px solid #d6a46780;
+  border-radius: 0 0.35rem 0.35rem 0;
+  pointer-events: none;
+}
+
+.cover-link:focus-visible {
+  outline: 2px solid #ffd899;
+  outline-offset: -7px;
+}
+
+.cover-welcome,
+.cover-action {
+  font-size: 0.875rem;
+  font-weight: bold;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.cover-link h1 {
+  margin: 0.15em 0 0;
+  color: inherit;
+  font-size: clamp(2.65rem, 9vw, 6.2rem);
+  line-height: 0.88;
+  text-transform: uppercase;
+  text-shadow: 2px 3px #2b100b;
+}
+
+.cover-tagline {
+  max-width: 30ch;
+  margin: 1.3rem auto 1.5rem;
+  font: italic clamp(1rem, 3vw, 1.3rem)/1.35 Georgia, serif;
+}
+
+.cover-art {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  height: clamp(7rem, 22vw, 11rem);
+  margin-bottom: 1.45rem;
+  border: 1px solid #e4ba7c;
+  background:
+    linear-gradient(0deg, #593614a1, #7a3e0a00 75%),
+    url("images/Canyon") center 57% / cover;
+}
+
+.cover-action {
+  display: inline-block;
+  padding-bottom: 0.12rem;
+  border-bottom: 1px solid #e4ba7c;
+}
+
+.cover-link:hover .cover-action {
+  color: #fff9e9;
+  border-color: currentColor;
+}
+
+.weed-toggle {
+  position: absolute;
+  right: 0.85rem;
+  bottom: 0.85rem;
+  min-height: 2.75rem;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid #bf9266;
+  border-radius: 0.15rem;
+  color: #ffe9b9;
+  background: #47230f;
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.weed-toggle:focus-visible {
+  outline: 2px solid #ffd899;
+  outline-offset: 2px;
+}
+
+.weed-trail {
+  position: absolute;
+  inset: auto 0 7% -5rem;
+  height: 4.5rem;
+  pointer-events: none;
+}
+
+.weed-travel {
+  width: 100%;
+  animation: weed-cross 9s linear infinite;
+}
+
+.weed-hop {
+  width: 4.5rem;
+  animation: weed-hop 0.73s ease-in-out infinite alternate;
+}
+
+.weed-spin {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0.15rem 0.2rem 0.15rem #31180dc2);
+  animation: weed-spin 1.8s linear infinite;
+}
+
+.weed-paused .weed-travel,
+.weed-paused .weed-hop,
+.weed-paused .weed-spin {
+  animation-play-state: paused;
+}
+
+@keyframes weed-cross {
+  0% { transform: translateX(0); }
+  78%, 100% { transform: translateX(calc(100% + 4.5rem)); }
+}
+
+@keyframes weed-hop {
+  0%, 12% { transform: translateY(0) scaleY(0.94); }
+  78%, 100% { transform: translateY(-0.9rem); }
+}
+
+@keyframes weed-spin {
+  to { transform: rotate(1turn); }
+}
+
+.book-paper {
+  min-height: 21rem;
+  padding: clamp(1.6rem, 6vw, 3.5rem);
+  border-radius: inherit;
+  background: linear-gradient(90deg, #c3a77a 0, #f0dfbd 1rem, #fff5de 2.5rem, #f7e9cb);
+}
+
+.book-paper h1 {
+  margin: 0 0 0.5em;
+}
+
+.book-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+.book-controls a {
+  padding: 0.55rem 0.85rem;
+  color: #ffebca;
+  background: #342014;
+  border: 1px solid #c5996c;
+  font-size: 0.95rem;
+  text-underline-offset: 0.2em;
+}
+
+#book-next {
+  margin-left: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root),
+::view-transition-group(lawrence-book-page) {
+  animation: none;
+}
+
+::view-transition-image-pair(lawrence-book-page) {
+  perspective: 1450px;
+  isolation: auto;
+}
+
+::view-transition-old(lawrence-book-page),
+::view-transition-new(lawrence-book-page) {
+  animation: none;
+  mix-blend-mode: normal;
+  transform-origin: left center;
+  backface-visibility: hidden;
+}
+
+::view-transition-old(lawrence-book-page) {
+  z-index: 1;
+  animation: page-turn 650ms cubic-bezier(0.4, 0.05, 0.28, 1) both;
+}
+
+.book-backward::view-transition-old(lawrence-book-page) {
+  animation: none;
+  z-index: 0;
+}
+
+.book-backward::view-transition-new(lawrence-book-page) {
+  z-index: 1;
+  animation: page-turn 650ms cubic-bezier(0.4, 0.05, 0.28, 1) reverse both;
+}
+
+@keyframes page-turn {
+  0% { transform: rotateY(0); }
+  100% { transform: rotateY(-105deg); filter: brightness(0.58); }
+}
+
+@media (max-width: 36rem) {
+  .cover-link {
+    padding-bottom: 3.3rem;
+  }
+
+  .weed-toggle {
+    min-height: 2rem;
+    bottom: 0.65rem;
+  }
+
+  .book-paper .team-grid {
+    gap: 0.75rem;
+  }
+
+  .book-paper .team-card {
+    padding: 0.35rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .weed-trail,
+  .weed-toggle {
+    display: none;
+  }
+
+  ::view-transition-old(lawrence-book-page),
+  .book-backward::view-transition-new(lawrence-book-page) {
+    animation: none;
+  }
+}

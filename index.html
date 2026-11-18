@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Logs of Lawrence</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="book.css">
+  <script src="book.js" defer></script>
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header">
+  <header class="site-header book-header">
     <p class="site-title"><a href="index.html">Logs of Lawrence</a></p>
     <nav aria-label="Main">
       <ul>
@@ -22,22 +24,34 @@
     </nav>
   </header>
 
-  <main id="main">
-    <h1>Welcome to the Logs of Lawrence</h1>
-    <p>Existing between the cave inside and the desert outside</p>
-    <p>Explore our group’s work and get in touch through our <a href="contact.html">contact page</a>.</p>
+  <main id="main" class="book-main">
+    <div class="book-stage" id="book-page" tabindex="-1">
+      <article class="book-cover">
+        <a class="cover-link" href="team.html">
+          <span class="cover-welcome">Welcome to the</span>
+          <h1>Logs of<br>Lawrence</h1>
+          <p class="cover-tagline">Existing between the cave inside and the desert outside</p>
+          <div class="cover-art" aria-hidden="true">
+            <div class="weed-trail" hidden>
+              <div class="weed-travel">
+                <div class="weed-hop">
+                  <canvas class="weed-spin" width="180" height="180"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="cover-action">Open the book <span aria-hidden="true">→</span></span>
+        </a>
+        <button class="weed-toggle" type="button" hidden>Pause tumbleweed</button>
+      </article>
+    </div>
 
-    <section aria-labelledby="featured-member-title">
-      <h2 id="featured-member-title">Meet a member of the team</h2>
-      <figure>
-        <img src="images/morgan-duff-as-a-baby.jpg" alt="Morgan Duff as a baby" width="224" height="168">
-        <figcaption><a href="morgan-duff.html">Morgan Duff</a></figcaption>
-      </figure>
-    </section>
-
+    <nav class="book-controls" aria-label="Turn pages" hidden>
+      <a id="book-previous" href="index.html"></a>
+      <a id="book-next" href="artwork.html"></a>
+    </nav>
   </main>
-
-  <footer class="site-footer">
+  <footer class="site-footer book-footer">
     <p>Built by our group with help from an AI agent.</p>
   </footer>
 </body>

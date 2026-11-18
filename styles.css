@@ -24,20 +24,12 @@ body {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.26), transparent 55%), var(--background);
 }
 
-body.home-page {
-  background: url("images/Canyon") center / cover fixed no-repeat;
-}
-
 .site-header,
 main,
 .site-footer {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1.5rem 1.25rem;
-}
-
-.home-page main {
-  background: #fff;
 }
 
 .site-header {
@@ -109,22 +101,6 @@ video {
   box-shadow: 4px 4px 0 #c2b6a4;
 }
 
-body.home-page::after {
-  display: block;
-  content: "";
-  position: fixed;
-  z-index: 20;
-  left: 0;
-  bottom: 1.5rem;
-  width: 3.75rem;
-  height: 3.75rem;
-  border: 0.2rem solid #70451f;
-  border-radius: 50%;
-  background: url("images/Tumbleweed") center / contain no-repeat;
-  pointer-events: none;
-  animation: tumbleweed-roll 8s linear infinite;
-}
-
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -180,22 +156,4 @@ body.home-page::after {
   top: 1rem;
   padding: 0.5rem 0.75rem;
   background: var(--background);
-}
-
-@keyframes tumbleweed-roll {
-  from {
-    transform: translateX(-6rem) rotate(0deg);
-  }
-
-  to {
-    transform: translateX(calc(100vw + 7rem)) rotate(1080deg);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body.home-page::after {
-    animation: none;
-    transform: none;
-    left: 1rem;
-  }
 }
