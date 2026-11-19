@@ -68,7 +68,8 @@
   display: block;
   padding: clamp(2.1rem, 5vw, 4rem) clamp(1.7rem, 6vw, 4.7rem) 2.15rem;
   text-align: center;
-  color: inherit;
+  color: #29231f;
+  background: #fff;
   text-decoration: none;
 }
 
@@ -128,7 +129,7 @@
 }
 
 .cover-link:hover .cover-action {
-  color: #fff9e9;
+  color: #29231f;
   border-color: currentColor;
 }
 
