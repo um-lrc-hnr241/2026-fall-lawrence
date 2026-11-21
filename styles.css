@@ -165,3 +165,41 @@ video {
   border: 1px solid var(--border);
   background: #fff;
 }
+
+.personal-page {
+  max-width: 70rem;
+}
+
+.personal-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.personal-panel {
+  padding: clamp(1rem, 3vw, 1.75rem);
+  border: 1px solid var(--border);
+  background: #f7f1e6;
+  box-shadow: 3px 3px 0 #c2b6a4;
+}
+
+.personal-panel h2 {
+  margin-top: 0;
+}
+
+.personal-build {
+  padding-block: 0.7rem;
+  border-top: 1px solid #c2b6a4;
+}
+
+.personal-build summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media (max-width: 48rem) {
+  .personal-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
