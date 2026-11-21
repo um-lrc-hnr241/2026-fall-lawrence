@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap');
 
 :root {
@@ -166,40 +167,106 @@ video {
   background: #fff;
 }
 
-.personal-page {
-  max-width: 70rem;
+.notebook-profile {
+  min-height: 100vh;
+  color: #312419;
+  background:
+    radial-gradient(ellipse at 50% 12%, #c7a986, transparent 64%),
+    repeating-linear-gradient(105deg, #ffffff09 0 1px, transparent 1px 4px),
+    #8d6d50;
 }
 
-.personal-columns {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
-  gap: 1.5rem;
+.notebook-profile .site-header {
+  max-width: none;
+  width: 100%;
+  padding: 1rem clamp(1rem, 4vw, 4rem);
 }
 
-.personal-panel {
-  padding: clamp(1rem, 3vw, 1.75rem);
-  border: 1px solid var(--border);
-  background: #f7f1e6;
-  box-shadow: 3px 3px 0 #c2b6a4;
+.notebook-profile .site-header nav ul {
+  gap: 0.35rem 1.1rem;
 }
 
-.personal-panel h2 {
-  margin-top: 0;
+.notebook-profile .skip-link:focus {
+  z-index: 1;
 }
 
-.personal-build {
-  padding-block: 0.7rem;
-  border-top: 1px solid #c2b6a4;
+.notebook {
+  --paper-margin: clamp(1.4rem, 4.5vw, 4rem);
+  width: calc(100% - clamp(1.25rem, 6vw, 4rem));
+  max-width: 59rem;
+  margin: clamp(1.25rem, 5vw, 3.5rem) auto 2rem;
+  padding: clamp(1.4rem, 5vw, 3.5rem) clamp(1.15rem, 5vw, 4.25rem) 2.5rem
+    calc(var(--paper-margin) + clamp(0.8rem, 2.5vw, 2.1rem));
+  border: 1px solid #b89669;
+  border-radius: 0.3rem 0.65rem 0.65rem 0.3rem;
+  background:
+    linear-gradient(90deg, transparent var(--paper-margin), #ad686799 var(--paper-margin),
+      #ad686799 calc(var(--paper-margin) + 1px), transparent calc(var(--paper-margin) + 1px)),
+    repeating-linear-gradient(180deg, transparent 0 1.68rem, #82949c37 1.68rem 1.75rem),
+    linear-gradient(90deg, #93704732, transparent 1.35rem),
+    radial-gradient(ellipse at 47% 30%, #fff4d9 43%, #efdcba 100%);
+  box-shadow: 2px 3px #ebd8b7, 4px 5px #b28b60, 6px 7px #6f4b32, 0 1rem 2.2rem #47301a66;
+  font-family: Georgia, serif;
+  line-height: 1.75rem;
 }
 
-.personal-build summary {
+.notebook h1,
+.notebook h2,
+.notebook h3 {
+  color: #4a281a;
+  font-family: "Caveat", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  line-height: 1.05;
+}
+
+.notebook h1 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(2.8rem, 7vw, 5.25rem);
+}
+
+.notebook .personal-panel {
+  margin-top: clamp(1.6rem, 4vw, 2.7rem);
+}
+
+.notebook .personal-panel h2 {
+  width: fit-content;
+  margin: 0 0 0.8rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid #9e624b;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+}
+
+.notebook .personal-panel p {
+  margin-top: 0.55rem;
+}
+
+.notebook .personal-build {
+  padding-block: 0.4rem;
+}
+
+.notebook .personal-build summary {
+  width: fit-content;
+  color: #572c20;
   cursor: pointer;
   font-weight: bold;
 }
 
-@media (max-width: 48rem) {
-  .personal-columns {
-    grid-template-columns: minmax(0, 1fr);
-  }
+.notebook .personal-build summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.notebook .build-preview {
+  margin-bottom: 0.8rem;
+}
+
+.notebook-portrait {
+  max-width: 13rem;
+  margin: 1rem 0;
+}
+
+.notebook-profile .site-footer {
+  width: calc(100% - 2rem);
+  border-color: #624631;
+  color: #2d1f15;
+  text-align: center;
 }
