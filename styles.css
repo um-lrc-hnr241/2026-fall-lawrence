@@ -157,3 +157,11 @@ video {
   padding: 0.5rem 0.75rem;
   background: var(--background);
 }
+
+.build-preview {
+  display: block;
+  width: 100%;
+  height: clamp(30rem, 75vh, 54rem);
+  border: 1px solid var(--border);
+  background: #fff;
+}
